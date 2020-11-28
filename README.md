@@ -46,3 +46,9 @@ npm run build
 Get greeting from HTTP API and display it on frontend.
 
 The API will be queried using axios and front rendered by Vue.
+
+## Chapter 4
+
+Integrate Vue development (frontend) with backend development with the aim of distributing an standalone .jar file which includes both frontend and backend inside it.
+
+
