@@ -43,4 +43,6 @@ npm run build
 
 ## Chapter 3
 
-Get greeting from API and display it on frontend.
+Get greeting from HTTP API and display it on frontend.
+
+The API will be queried using axios and front rendered by Vue.
