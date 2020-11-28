@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     fetchGreeting () {
-      axios.get('http://localhost:8181/api/greet')
+      axios.get('api/greet')
         .then(response => {
           this.greetingMessage = response.data.greeting
         })
