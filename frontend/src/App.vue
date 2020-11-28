@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Hello world!"/>
+  <HelloWorld :msg=greetingMessage />
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      greetingMessage: "Holi"
+    }
   }
 }
 </script>
