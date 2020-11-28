@@ -4,6 +4,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -12,7 +13,18 @@ export default {
   },
   data() {
     return {
-      greetingMessage: "Holi"
+      greetingMessage: "Client side greeting"
+    }
+  },
+  created() {
+    this.fetchGreeting()
+  },
+  methods: {
+    fetchGreeting () {
+      axios.get('http://localhost:8181/api/greet')
+        .then(response => {
+          this.greetingMessage = response.data.greeting
+        })
     }
   }
 }
