@@ -40,3 +40,7 @@ npm run build
 ```
 
 **Output:** frontend ready files on frontend/dist
+
+## Chapter 3
+
+Get greeting from API and display it on frontend.
