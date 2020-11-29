@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgresql:
+    image: postgres:11
+    command: ["postgres", "-c", "log_statement=all"]
+    container_name: postgres_laboratory
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "user_laboratory"
+      POSTGRES_PASSWORD: "password_laboratory"
+      POSTGRES_DB: "laboratory"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+      COMPOSE_PROJECT_NAME: "laboratory"

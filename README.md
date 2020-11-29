@@ -59,4 +59,21 @@ As a result:
 - During development stage frontend code is run with `npm run serve` on localhost:8181 and proxy-passes all traffic pointing to /api to port localhost:8080 (Springboot backend).
 - On build and packaging stage, frontend is built first, then backend copies all code from frontends build output to the resources folder and packages.
 
-**Output:** output jar file serves both backend and frontend 
+**Output:** output jar file serves both backend and frontend
+
+## Chapter 5
+
+Setup a PostgreSQL database for persistence and manage schema migrations with Flyway.
+
+- [Flyway doc about including the dependency](https://flywaydb.org/documentation/usage/plugins/springboot)
+- [Springboot doc about setup](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-execute-flyway-database-migrations-on-startup)
+
+Important note, remember to add to your pom.xml jpa dependecy:
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
+**Output:** docker file with the database definition and first migration for a table run on project build. 
