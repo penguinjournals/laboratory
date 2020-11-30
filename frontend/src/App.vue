@@ -1,29 +1,29 @@
 <template>
-  <HelloWorld :msg=greetingMessage />
+  <Predictions :predictions=predictions />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
+import Predictions from "@/components/Predictions";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Predictions
   },
   data() {
     return {
-      greetingMessage: "Client side greeting"
+      predictions: []
     }
   },
   created() {
-    this.fetchGreeting()
+    this.fetchPredictions()
   },
   methods: {
-    fetchGreeting () {
-      axios.get('api/greet')
+    fetchPredictions () {
+      axios.get('api/predictions')
         .then(response => {
-          this.greetingMessage = response.data.greeting
+          this.predictions = response.data
         })
     }
   }

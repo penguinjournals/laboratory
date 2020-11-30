@@ -77,3 +77,21 @@ Important note, remember to add to your pom.xml jpa dependecy:
 ```
 
 **Output:** docker file with the database definition and first migration for a table run on project build. 
+
+## Chapter 6
+
+- Setup [jOOQ](https://www.jooq.org/) as object-database mapping tool.
+- API call that returns all predictions from database.
+- Front renders all predictions.
+
+Tip:
+
+Sample prediction to insert to database:
+
+```
+INSERT INTO prediction (title, body, deadline) VALUES ('Hello world', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum pellentesque tortor, vitae porta turpis rutrum non. Sed elit mi, aliquam vitae ullamcorper ac, rutrum sed lacus. In finibus lectus bibendum, efficitur nisi sit amet, eleifend dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '2020-12-31');
+```
+
+**Output:** on build database tables related objects are generated. Use of those objects is out of scope.
+
+
