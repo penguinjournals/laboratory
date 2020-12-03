@@ -1,5 +1,6 @@
 package com.penguinjournals.laboratory.repository;
 
+import com.penguinjournals.laboratory.dao.PredictionDao;
 import com.penguinjournals.laboratory.domain.Prediction;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
@@ -11,21 +12,17 @@ import static com.penguinjournals.laboratory.jooq.tables.Prediction.PREDICTION;
 @Repository
 public class PredictionRepository {
 
-    private final DSLContext dsl;
+    private PredictionDao predictionDao;
 
-    public PredictionRepository(final DSLContext dslContext) {
-        this.dsl = dslContext;
+    public PredictionRepository(final PredictionDao predictionDao) {
+        this.predictionDao = predictionDao;
     }
 
     public List<Prediction> getPredictionsSortedByDate() {
-        return getDsl()
-                .select()
-                .from(PREDICTION)
-                .orderBy(PREDICTION.DEADLINE.desc())
-                .fetchInto(Prediction.class);
+        return getPredictionDao().getPredictionsSortedByDate();
     }
 
-    private DSLContext getDsl() {
-        return this.dsl;
+    private PredictionDao getPredictionDao() {
+        return this.predictionDao;
     }
 }

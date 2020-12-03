@@ -94,4 +94,10 @@ INSERT INTO prediction (title, body, deadline) VALUES ('Hello world', 'Lorem ips
 
 **Output:** on build database tables related objects are generated. Use of those objects is out of scope.
 
+## Chapter 7
 
+Enable security using [JWT](https://jwt.io/)
+
+Following [this guide](https://bezkoder.com/spring-boot-security-postgresql-jwt-authentication/)
+
+**Output:** `/profile` will be displayed only if user is logged in.
