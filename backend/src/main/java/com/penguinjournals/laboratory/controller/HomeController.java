@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class Home {
+public class HomeController {
 
     private PredictionService predictionService;
 
-    public Home(final PredictionService predictionService) {
+    public HomeController(final PredictionService predictionService) {
         this.predictionService = predictionService;
     }
 
