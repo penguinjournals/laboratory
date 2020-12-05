@@ -24,14 +24,14 @@ public class JwtUtils {
     private String jwtSecret;
 
     @Value("${laboratory.app.jwtExpiration}")
-    private String jwtExpiration;
+    private Integer jwtExpiration;
 
     public String generateJwtToken(final Authentication authentication) {
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date().getTime()) + jwtExpiration))
+                .setExpiration(new Date(new Date().getTime() + jwtExpiration))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }

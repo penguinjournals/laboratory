@@ -2,7 +2,6 @@ package com.penguinjournals.laboratory.repository;
 
 import com.penguinjournals.laboratory.dao.UserDao;
 import com.penguinjournals.laboratory.domain.User;
-import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -16,26 +15,30 @@ public class UserRepository {
         this.userDao = userDao;
     }
 
-    public Optional<User> findByUsername(String username) {
+    public Optional<User> findByUsername(final String username) {
         return getUserDao().findUserByName(username);
     }
 
-    public Optional<User> findUserByEmail(String email) {
+    public Optional<User> findUserByEmail(final String email) {
         return getUserDao().findUserByEmail(email);
     }
 
-    public Boolean existsByUsername(String username) {
+    public Boolean existsByUsername(final String username) {
         if (this.findByUsername(username).isPresent()) {
             return Boolean.TRUE;
         }
         return Boolean.FALSE;
     }
 
-    public Boolean existsByEmail(String email) {
+    public Boolean existsByEmail(final String email) {
         if (this.findUserByEmail(email).isPresent()) {
             return Boolean.TRUE;
         }
         return Boolean.FALSE;
+    }
+
+    public void save(final User user) {
+        this.getUserDao().insertUserWithRoles(user);
     }
 
     private UserDao getUserDao() {

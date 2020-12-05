@@ -2,6 +2,11 @@ package com.penguinjournals.laboratory.controller;
 
 import com.penguinjournals.laboratory.domain.JwtResponse;
 import com.penguinjournals.laboratory.domain.LoginRequest;
+import com.penguinjournals.laboratory.domain.MessageResponse;
+import com.penguinjournals.laboratory.domain.Role;
+import com.penguinjournals.laboratory.domain.RoleName;
+import com.penguinjournals.laboratory.domain.SignupRequest;
+import com.penguinjournals.laboratory.domain.User;
 import com.penguinjournals.laboratory.repository.RoleRepository;
 import com.penguinjournals.laboratory.repository.UserRepository;
 import com.penguinjournals.laboratory.security.jwt.JwtUtils;
@@ -19,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,7 +50,7 @@ public class AuthController {
     private JwtUtils jwtUtils;
 
     @PostMapping("/signin")
-    public ResponseEntity<?> authenticateUser(@RequestBody final LoginRequest loginRequest) {
+    public ResponseEntity<?> authenticateUser(@Valid @RequestBody final LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -59,5 +66,34 @@ public class AuthController {
                                                 userDetails.getUsername(),
                                                 userDetails.getEmail(),
                                                 roles));
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody final SignupRequest signupRequest) {
+        if (userRepository.existsByUsername(signupRequest.getUsername())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: User name is already in use"));
+        }
+
+        if (userRepository.existsByEmail(signupRequest.getEmail())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Email is already in use"));
+        }
+
+        User user = new User(signupRequest.getUsername(),
+                            signupRequest.getEmail(),
+                            passwordEncoder.encode(signupRequest.getPassword()));
+
+        List<Role> defaultRoleList = new ArrayList<>();
+
+        Role roleUser = roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new RuntimeException("Error: Default User role is not present on database"));
+        defaultRoleList.add(roleUser);
+        user.setRoles(defaultRoleList);
+
+        userRepository.save(user);
+
+        return ResponseEntity.ok(new MessageResponse("User registered succesfully"));
     }
 }

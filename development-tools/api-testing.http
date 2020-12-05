@@ -1,0 +1,30 @@
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "paco",
+  "email": "paco@email.org",
+  "password": "12345678"
+}
+###
+
+POST http://localhost:8080/api/auth/signin
+Content-Type: application/json
+
+{
+  "username": "paco",
+  "password": "12345678"
+}
+###
+
+GET http://localhost:8080/api/profile
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MTUzOTYzLCJleHAiOjE2MDcyNDAzNjN9.x9ycgpc8oYfbf9swLq1Xv8NC8kxqs5jcja3FgbswoYD0gS3wXyj7xUInjv468n-BMuDCfocgPf71hCz2zS1Hqg
+
+###
+GET http://localhost:8080/api/admin
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MTUzOTYzLCJleHAiOjE2MDcyNDAzNjN9.x9ycgpc8oYfbf9swLq1Xv8NC8kxqs5jcja3FgbswoYD0gS3wXyj7xUInjv468n-BMuDCfocgPf71hCz2zS1Hqg
+
+###
+
+GET http://localhost:8080/api/predictions
+###
