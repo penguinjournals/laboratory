@@ -1,8 +1,8 @@
 # laboratory
 
-## Chapter 1
+## Book 1, The setup
 
-"Hello world" Rest API in SpringBoot
+### Chapter 1, "Hello world" Rest API in SpringBoot
 
 [Following this guide](https://spring.io/guides/gs/rest-service/)
 
@@ -16,7 +16,7 @@ mvn clean package
 
 **Output:** runnable .jar file.
 
-## Chapter 2
+### Chapter 2, Vue.js as standalone frontend
 
 Vue.js front managed using webpack which consumes the greeting API defined on Chapter-1.
 
@@ -41,7 +41,7 @@ npm run build
 
 **Output:** frontend ready files on frontend/dist
 
-## Chapter 3
+### Chapter 3, Rest API call from Vue.js
 
 Get greeting from HTTP API and display it on frontend.
 
@@ -49,7 +49,7 @@ The API will be queried using axios and front rendered by Vue.
 
 **Output:** frontend loading the content of the greeting from server
 
-## Chapter 4
+### Chapter 4, Vue.js dist integrated into springboot .jar file to serve as static
 
 Integrate Vue development (frontend) with backend development with the aim of distributing an standalone .jar file which includes both frontend and backend inside it.
 
@@ -61,7 +61,7 @@ As a result:
 
 **Output:** output jar file serves both backend and frontend
 
-## Chapter 5
+### Chapter 5, Database migrations with Flyway
 
 Setup a PostgreSQL database for persistence and manage schema migrations with Flyway.
 
@@ -78,7 +78,7 @@ Important note, remember to add to your pom.xml jpa dependecy:
 
 **Output:** docker file with the database definition and first migration for a table run on project build. 
 
-## Chapter 6
+### Chapter 6, Database to object mapping using jOOQ
 
 - Setup [jOOQ](https://www.jooq.org/) as object-database mapping tool.
 - API call that returns all predictions from database.
@@ -94,10 +94,20 @@ INSERT INTO prediction (title, body, deadline) VALUES ('Hello world', 'Lorem ips
 
 **Output:** on build database tables related objects are generated. Use of those objects is out of scope.
 
-## Chapter 7
+### Chapter 7, Security with Springboot (Spring Security) and JWT
 
 Enable security using [JWT](https://jwt.io/)
 
 Following [this guide](https://bezkoder.com/spring-boot-security-postgresql-jwt-authentication/)
 
-**Output:** `/profile` will be displayed only if user is logged in.
+**Output:** `/profile` will be displayed only if user is logged in (login and then using token).
+
+### [TODO] Chapter 8, Security integration in frontend
+
+### [TODO] Chapter 9, Serverless deployment on Google App Engine or something similar
+
+## [TODO] Book 2, Adding value
+
+### [TODO] Chapter 1, Prediction CRUD
+
+### [TODO] List all predictions
