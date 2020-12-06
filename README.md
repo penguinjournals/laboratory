@@ -102,7 +102,17 @@ Following [this guide](https://bezkoder.com/spring-boot-security-postgresql-jwt-
 
 **Output:** `/profile` will be displayed only if user is logged in (login and then using token).
 
-### [TODO] Chapter 8, Security integration in frontend
+### Chapter 8, Security integration in frontend, Springboot security, JWT and Vue (Vuex)
+
+Make Vue display a `/user` page with dummy content but which can be only seen if the user is logged in.
+
+Following [this guide](https://bezkoder.com/spring-boot-vue-js-authentication-jwt-spring-security/)
+
+Also [this guide](https://bezkoder.com/jwt-vue-vuex-authentication/)
+
+Included migration to Vuex4 + Vue Router 4.
+
+**Output:** `/user` displays dummy content if the user is logged in, if not redirects to `/login`
 
 ### [TODO] Chapter 9, Serverless deployment on Google App Engine or something similar
 

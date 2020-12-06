@@ -1,30 +1,32 @@
 <template>
-  <Predictions :predictions=predictions />
+  <div id="app">
+    <div v-if="!currentUser">
+      <router-link to="/signin">Login</router-link>
+      <router-link to="/signup">Register</router-link>
+    </div>
+    <div v-if="currentUser">
+      <router-link to="/profile">Profile</router-link>
+      <a href @click.prevent="logout">Logout</a>
+    </div>
+    <div>
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Predictions from "@/components/Predictions";
 
 export default {
   name: 'App',
-  components: {
-    Predictions
-  },
-  data() {
-    return {
-      predictions: []
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
     }
   },
-  created() {
-    this.fetchPredictions()
-  },
   methods: {
-    fetchPredictions () {
-      axios.get('api/predictions')
-        .then(response => {
-          this.predictions = response.data
-        })
+    logout() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
     }
   }
 }
