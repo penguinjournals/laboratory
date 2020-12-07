@@ -123,3 +123,18 @@ Included migration to Vuex4 + Vue Router 4.
 ### [TODO] Chapter 1, Prediction CRUD
 
 ### [TODO] List all predictions
+
+## [TODO] Book 3, Performance tales
+
+### [TODO] Chapter 1, Serve static content outside the .jar
+
+### [TODO] Chapter 2, Multiple frontends
+
+### [TODO] Chapter 3, SQL performance basics
+
+### [TODO] Chapter 4, Cache
+
+### [TODO] Chapter 5, Static content performance minify, cache, CDN
+
+### [TODO] Chapter 6, Read database - Write database
+
