@@ -102,4 +102,16 @@ public class UserDetailsImpl implements UserDetails {
     public String getEmail() {
         return this.email;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("UserDetailsImpl{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", authorities=").append(authorities);
+        sb.append('}');
+        return sb.toString();
+    }
 }

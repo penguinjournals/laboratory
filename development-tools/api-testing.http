@@ -18,8 +18,19 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8080/api/profile
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MTUzOTYzLCJleHAiOjE2MDcyNDAzNjN9.x9ycgpc8oYfbf9swLq1Xv8NC8kxqs5jcja3FgbswoYD0gS3wXyj7xUInjv468n-BMuDCfocgPf71hCz2zS1Hqg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MzE3MTgwLCJleHAiOjE2MDc0MDM1ODB9.s17jlL9fTzALyqWYwiep3HsQxAC84pU2XO_qiiab3xC4_ZCSaqMHJ-fkYdB1qKEQiZDatbeMvuaLVgidEFjV8g
 
+###
+
+POST http://localhost:8080/api/prediction
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MzE3MTgwLCJleHAiOjE2MDc0MDM1ODB9.s17jlL9fTzALyqWYwiep3HsQxAC84pU2XO_qiiab3xC4_ZCSaqMHJ-fkYdB1qKEQiZDatbeMvuaLVgidEFjV8g
+Content-Type: application/json
+
+{
+  "title": "prediction title",
+  "body": "prediction body",
+  "deadline": "2020-12-31T00:00:00"
+}
 ###
 GET http://localhost:8080/api/admin
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYWNvIiwiaWF0IjoxNjA3MTUzOTYzLCJleHAiOjE2MDcyNDAzNjN9.x9ycgpc8oYfbf9swLq1Xv8NC8kxqs5jcja3FgbswoYD0gS3wXyj7xUInjv468n-BMuDCfocgPf71hCz2zS1Hqg
