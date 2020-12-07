@@ -1,9 +1,11 @@
 import Vuex from 'vuex';
 
-import { auth } from './auth.module';
+import { auth } from '@/store/auth.module';
+import { data} from '@/store/data.module';
 
 export default new Vuex.Store({
   modules: {
-    auth
+    auth,
+    data
   }
 });

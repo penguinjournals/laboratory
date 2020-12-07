@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-link to="/">Home</router-link>
     <div v-if="!currentUser">
       <router-link to="/signin">Login</router-link>
       <router-link to="/signup">Register</router-link>
@@ -26,7 +27,7 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('auth/logout');
-      this.$router.push('/login');
+      this.$router.push('/');
     }
   }
 }

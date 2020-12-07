@@ -11,6 +11,10 @@ class DataService {
   getProfile() {
     return axios.get(API_URL + 'profile', {headers: authHeader()});
   }
+
+  postPrediction(prediction) {
+    return axios.post(API_URL + 'prediction', prediction, {headers: authHeader()});
+  }
 }
 
 export default new DataService();

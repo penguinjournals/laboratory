@@ -106,6 +106,8 @@ Following [this guide](https://bezkoder.com/spring-boot-security-postgresql-jwt-
 
 Make Vue display a `/user` page with dummy content but which can be only seen if the user is logged in.
 
+Post a prediction and register it asociated with the user.
+
 Following [this guide](https://bezkoder.com/spring-boot-vue-js-authentication-jwt-spring-security/)
 
 Also [this guide](https://bezkoder.com/jwt-vue-vuex-authentication/)
