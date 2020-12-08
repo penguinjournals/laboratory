@@ -116,7 +116,11 @@ Included migration to Vuex4 + Vue Router 4.
 
 **Output:** `/user` displays dummy content if the user is logged in, if not redirects to `/login`
 
-### [TODO] Chapter 9, Serverless deployment on Google App Engine
+### [TODO] Chapter 9, Server setup using Ansible for standalone .jar file
+
+### [TODO] Chapter 10, Server setup using Ansible for static + API approach
+
+### [TODO] Chapter 11, Serverless deployment on Google App Engine
 
 To be done in the future.
 
