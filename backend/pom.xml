@@ -12,7 +12,7 @@
 	<name>backend</name>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<postgresql.url>jdbc:postgresql://localhost:5432/laboratory</postgresql.url>
 		<postgresql.user>user_laboratory</postgresql.user>
 		<postgresql.password>password_laboratory</postgresql.password>
