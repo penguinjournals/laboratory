@@ -116,7 +116,13 @@ Included migration to Vuex4 + Vue Router 4.
 
 **Output:** `/user` displays dummy content if the user is logged in, if not redirects to `/login`
 
-### [TODO] Chapter 9, Serverless deployment on Google App Engine or something similar
+### Chapter 9, Serverless deployment on Google App Engine
+
+Will use [Google App Engine](https://cloud.google.com/appengine) and persist in [Google Cloud SQL](https://cloud.google.com/sql) (PostgreSQL).
+
+[Deploy Springboot project to Google App Engine](https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot/)
+
+
 
 ## [TODO] Book 2, Adding value
 
